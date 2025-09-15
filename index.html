@@ -100,6 +100,15 @@
       backdrop-filter: blur(10px);
     }
 
+    aside ul, section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    aside ul li, section ul li {
+      padding: 6px 0;
+    }
+
     form input, form textarea {
       width: 100%;
       padding: 10px;
@@ -124,6 +133,12 @@
       background: var(--accent-light);
     }
 
+    a.project-link {
+      color: var(--accent-light);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
       margin: 20px;
@@ -138,6 +153,7 @@
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="about.html">👤 About Me</a>
+    <a href="projects.html">📂 Projects</a>
   </nav>
 
   <header class="hero">
@@ -155,7 +171,6 @@
     <aside>
       <h2>About Me</h2>
       <p>Passionate about building reliable systems and learning emerging tech trends.</p>
-      <!-- New Link to Full Bio -->
       <p><a href="about.html" style="color: #a78bfa; font-weight: bold; text-decoration: none;">📖 View My Full Bio →</a></p>
 
       <h3>Tech Stack</h3>
@@ -178,7 +193,11 @@
 
       <section>
         <h2>Projects</h2>
-        <p>Golfscore App, Online Voting System, Kubernetes Live Demo</p>
+        <ul>
+          <li><a class="project-link" href="projects.html#project1">Golfscore App</a></li>
+          <li><a class="project-link" href="projects.html#project2">Online Voting System</a></li>
+          <li><a class="project-link" href="projects.html#project3">Kubernetes Live Demo</a></li>
+        </ul>
       </section>
 
       <section>
