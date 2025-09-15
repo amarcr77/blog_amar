@@ -25,7 +25,7 @@
     .container {
       display: flex;
       justify-content: space-around; /* Positions left and right cards toward center */
-      align-items: flex-start;
+      align-items: stretch; /* make both cards same height */
       max-width: 1000px;
       margin: 0 auto 24px auto;
       gap: 20px;
@@ -38,8 +38,11 @@
       padding: 24px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
-      width: 45%; /* make cards narrower so they meet in the middle */
+      width: 45%;
       min-width: 280px;
+      display: flex;           /* make card a flex container */
+      flex-direction: column;  
+      justify-content: space-between; /* ensures content fills evenly */
     }
 
     h2 {
@@ -102,7 +105,7 @@
         <tbody>
           <tr>
             <td>B.E. (Information Technology)</td>
-            <td>NDMVP's KBTCOE,Nashik (First Class)</td>
+            <td>NDMVP's KBTCOE, Nashik (First Class)</td>
           </tr>
           <tr>
             <td>MBA (Information Technology)</td>
