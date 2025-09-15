@@ -77,13 +77,26 @@
       color: var(--accent);
     }
     .project p {
-      margin: 0;
+      margin: 8px 0;
+    }
+    .project ul {
+      margin: 8px 0;
+      padding-left: 20px;
     }
     footer {
       text-align: center;
       margin: 20px;
       font-size: 0.9rem;
       opacity: 0.7;
+    }
+    .back-link {
+      display: block;
+      margin-bottom: 15px;
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -99,7 +112,13 @@
 
     <div class="project">
       <h2>1️⃣ Online Voting System using Blockchain</h2>
-      <p>Developed a secure and decentralized online voting system using Python and blockchain technology to ensure transparency and tamper-proof elections.</p>
+      <a class="back-link" href="index.html">&#x2190; Go Back</a>
+      <ul>
+        <li><a href="#">Live Demo</a></li>
+        <li><a href="#">Source Code</a></li>
+      </ul>
+      <p>The project is aimed at providing a secured and user-friendly Online Voting System. The problem of voting is still critical in terms of safety and security. This system deals with the design and development of a computer-based voting system using Excel as backend DB and user interface to provide high performance and security.</p>
+      <p>Online Voting Systems have many advantages over the traditional voting system, including less cost, faster results, easy accessibility, accuracy, and low risk of human and mechanical errors. Future development focuses on designing a system that is easy to use while providing security and privacy through proper authentication and processing.</p>
     </div>
 
     <div class="project">
@@ -113,8 +132,8 @@
     </div>
 
     <div class="project">
-      <h2>4️⃣ Kubernetes Live Demo</h2>
-      <p>Implemented containerized microservices deployed on Kubernetes cluster with live monitoring using Prometheus and Grafana.</p>
+      <h2>4️⃣ Load Balancing in Public Cloud</h2>
+      <p>Load balancing is an essential technique used in cloud computing to optimize resource utilization and ensure that no single resource is overburdened with traffic. Workloads are distributed across multiple computing resources such as servers, VMs, or containers to improve performance, availability, and scalability.</p>
     </div>
   </div>
 
