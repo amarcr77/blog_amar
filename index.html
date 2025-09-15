@@ -1,223 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amar Badade — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Amar Badade — Block Technical Assistant, HPC enthusiast, Blockchain learner. Modern portfolio and contact form." />
+  <style>
+    :root{
+      --bg1: #0f172a; /* deep navy */
+      --glass: rgba(255,255,255,0.06);
+      --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
+      --card: rgba(255,255,255,0.04);
+      --muted: rgba(255,255,255,0.7);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:#e6eef8;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
+                  radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent),
+                  var(--bg1);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:36px 20px;
+    }
+    .container{max-width:1000px;margin:0 auto}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Amar Badade</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/theme-switcher.css">
-    </head>
-    <body>
-        <div id="container--main">
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:grid;place-items:center;font-weight:800;color:white;font-size:20px}
+    h1{margin:0;font-size:22px}
+    .sub{color:var(--muted);font-size:13px}
 
-            <section id="wrapper--hero" class="section--page">
-                <img id="profile-pic" src="./assets/images/profile_pic.png">
+    main{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
+    @media (max-width:980px){main{grid-template-columns:1fr} .sidebar{order:2}}
 
-                <div>
-                    <h1 id="user-name">Amar Badade</h1>
-                    <p id="bio"> Cdac-Acts Pune(HPCAP), MBA-IT,BE-IT <a href="https://www.youtube.com/c/" target="_blank"></a> and contributor at CSC(2021-2023) <a href="" target="_blank"></a>.</p>
-                    <p id="email">👉 amar.badade123@gmail.com</p>
-                </div>  
-            </section>
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:14px;padding:18px}
 
-            <section class="section--page">
-        
-                <div id="socials--list">
-                    <a href="https://x.com/amar_badade" target="_blank">Twitter</a>
-                    <a href="https://www.linkedin.com/in/amar-badade-a94484137/" target="_blank">Linkedin</a>
-                    <a href="https://github.com/amarcr77" target="_blank">Github</a>
-                    <a href="./assets/Amar Badade.pdf" target="_blank">Download Resume</a>
-                     <a href="" target="_blank">About & Contacts</a>
-                </div>
-            </section>
+    .hero{display:flex;flex-direction:column;gap:12px;padding:22px}
+    .hero h2{font-size:28px;margin:0}
+    .hero p{margin:0;color:rgba(230,238,248,0.9)}
+    .cta-row{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+    .btn-primary{background:var(--accent);background-clip:padding-box;color:white}
 
-            <section class="section--page">
-                <h2>Skills & Qualifications</h2>
-                <ul id="qualifications--list">
-                    <li>✔️ One Years experience in CSC E-gov. Sol</li>
-                    <li>✔️ MIS and Block Technical assistant (Ministry Of Panchayati Raj)Govt.of India</li>
-                    <li>✔️ Intrested To Work in Blockchain Technology</li>
-                      <li>✔️ Masters In Information Technology</li>
-                  
-                </ul>
-            </section>
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-size:13px}
 
-            <section class="section--page">
-                <h2>Tech stack</h2>
+    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .title-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,#7c3aed,#06b6d4)}
+    h3{margin:0;font-size:16px}
 
-                <div id="wrapper--techstack__items">
-               
-                    <div class="card--techstack"><span>Cloud Concept:Docker,github,OpenMPI</span></div>
-                    <div class="card--techstack"><span>Parallel Programming:CUDA,Openmp</span></div>
-                    <div class="card--techstack"><span>Languages:C,C++,python,java</span></div>
-                    <div class="card--techstack"><span>Profilling tools:gdb,gprof,vtune</span></div>
-                    <div class="card--techstack"><span>Scripting & DB:PERL,Bash,MongoDB, MySQL,NoSQl</span></div>
-                </div>
-            </section>
+    .tech-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .tech-item{padding:8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:14px}
 
-            <section id="work-history-wrapper" class="section--page">
-                <h2>Work History</h2>
+    .timeline{display:flex;flex-direction:column;gap:10px}
+    .timeline-item{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+    .muted{color:var(--muted);font-size:13px}
 
-                <div class="card--work-history">
-                    <strong>🚧 Block Technical Assistant | </strong>
-                    <p>9/2023 - present</p>
-                    <p><strong>[Current Challenge]</strong> <br>CDAC-High Performance Computing | Aspiring IT Professional | Eager to Leverage Skills in Blockchain Tech.and HPC Driven by Innovation and Growth.<a href="https://www.youtube.com/appwrite" target="_blank"></a></p>
-                    <strong>[Progress since 9/2014]</strong>
-                    <ul>  
-                           <li>CDAC-DHPCAP</li>
-                         <li>MBA - Information Technology</li>
-                          <li>Bachelor of Engineering</li>
-                        <li>Diploma In IT</li>
-                      
-                       
-                      
-                    </ul>
-                </div>
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;font-size:14px}
+    th{color:var(--muted);font-weight:600}
 
-                <div class="line-break"></div>
+    .projects{display:grid;gap:10px}
+    .project{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .project a{color:#a5f3fc;text-decoration:none}
 
-                <div class="card--work-history">
-                    <strong>🚧 Block Technical Assistant</strong>
-                    <p>11/2021 - 9/2023</p>
-                    <p>Worked on Csc E gov Sol platform more accessible through live de, articles, Public Fund Management System, and event-based training. Also trained various categories people at rural area with help of platform Ministry of panchayat raj i.e TMP(Trainning Management Portal).</p>
-                    <ul>
-                        <li>Management Information System</li>
-                      
-                    </ul>
-                </div>
+    .sidebar .contact{display:flex;flex-direction:column;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
 
-                <div class="line-break"></div>
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
 
-                <div class="card--work-history">
-         
-                    
-                    
-                    
-                    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Courses Table</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        .credit {
-            text-align: center;
-        }
-    </style>
+    /* subtle entrance */
+    .fade-up{transform:translateY(6px);opacity:0;animation:up 700ms forwards}
+    .fade-up.delay{animation-delay:120ms}
+    @keyframes up{to{transform:none;opacity:1}}
+
+    /* tiny utilities */
+    .row{display:flex;gap:10px;align-items:center}
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">AB</div>
+        <div>
+          <h1>Amar Badade</h1>
+          <div class="sub">Block Technical Assistant • HPC & Blockchain Enthusiast</div>
+        </div>
+      </div>
+      <div class="row">
+        <a class="small" href="#projects">Projects</a>
+        <a class="small" href="#contact">Contact</a>
+      </div>
+    </header>
 
-    <h1>Academic Course Completed</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Course Name</th>
-                <th>Percentage</th>
-                <th>University</th>
-                <th>Year</th>
-            </tr>
-        </thead>
-        <tbody>
-             <tr>
-                <td>DHPCAP</td>
-                <td class="credit">Pursuing</td>
-                <td>CDAC</td>
-                <td>2024</td>
-            </tr>
-             <tr>
-                <td>MBA</td>
-                <td class="credit">75.75</td>
-                <td>SPPU</td>
-                <td>2023</td>
-            </tr>
+    <main>
+      <section class="card hero fade-up">
+        <h2>Hello — I'm Amar 👋</h2>
+        <p>I work at the intersection of high performance computing, e‑governance platforms and emerging blockchain technologies. I enjoy building reliable distributed systems and solving practical problems that impact communities.</p>
 
-   <tr>
-                <td>Bachelor of Engineering</td>
-                <td class="credit">65.4</td>
-                <td>SPPU</td>
-                <td>2018</td>
-            </tr>
+        <div class="skills">
+          <div class="skill">CDAC-Acts Pune (HPCAP)</div>
+          <div class="skill">MBA — Information Technology</div>
+          <div class="skill">BE — IT</div>
+          <div class="skill">MIS • CSC E-Gov</div>
+          <div class="skill">Blockchain • Cloud • CUDA</div>
+        </div>
 
-            
-            <tr>
-                <td>Diploma In IT</td>
-                <td class="credit">70.69</td>
-                <td>MSBTE</td>
-                <td>2014</td>
-            </tr>
-         
-           
-           
-        </tbody>
-    </table>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-outline" href="/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
 
+        <div style="margin-top:14px" class="muted">Email: <a href="mailto:amar.badade123@gmail.com" style="color:inherit">amar.badade123@gmail.com</a></div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card" style="margin-bottom:16px">
+          <div class="section-title"><div class="title-dot"></div><h3>Skills & Qualifications</h3></div>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>1+ year experience in CSC E-gov Solutions</li>
+            <li>Management Information Systems & Training Delivery</li>
+            <li>Interested in Blockchain & Cloud Computing</li>
+            <li>Masters in Information Technology</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="section-title"><div class="title-dot"></div><h3>Tech stack</h3></div>
+          <div class="tech-list">
+            <div class="tech-item">Docker • GitHub</div>
+            <div class="tech-item">OpenMPI • Parallel Programming</div>
+            <div class="tech-item">C, C++, Python, Java</div>
+            <div class="tech-item">CUDA • OpenMP</div>
+            <div class="tech-item">gdb, gprof, VTune</div>
+            <div class="tech-item">Bash, Perl, MongoDB, MySQL</div>
+          </div>
+        </div>
+      </aside>
+
+      <section style="grid-column:1 / -1; margin-top:18px">
+        <div class="card fade-up delay">
+          <div class="section-title"><div class="title-dot"></div><h3>Work History</h3></div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div style="display:flex;justify-content:space-between"><strong>Block Technical Assistant</strong><span class="muted">Sep 2023 - Present</span></div>
+              <div class="muted">CDAC - High Performance Computing & Aspiring Blockchain practitioner. Focused on e‑governance tooling and training programs.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div style="display:flex;justify-content:space-between"><strong>Block Technical Assistant</strong><span class="muted">Nov 2021 - Sep 2023</span></div>
+              <div class="muted">Worked on CSC E‑gov platform, training, public fund management modules and rural outreach programs.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <div class="section-title"><div class="title-dot"></div><h3 id="projects">Projects & Accomplishments</h3></div>
+          <div class="projects">
+            <div class="project">
+              <strong>Online Voting System (Python)</strong>
+              <div class="muted">Computer based voting application — designed for secure polling workflows and education.</div>
+              <a href="#">View details</a>
+            </div>
+
+            <div class="project">
+              <strong>Load Balancing in Public Cloud</strong>
+              <div class="muted">Experimented with spreadsheet-backed coordination and dynamic task distribution.</div>
+              <a href="#">View details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <div class="section-title"><div class="title-dot"></div><h3>Academic Course Completed</h3></div>
+          <table aria-label="Academic courses">
+            <thead><tr><th>Course Name</th><th>Percentage</th><th>University</th><th>Year</th></tr></thead>
+            <tbody>
+              <tr><td>DHPCAP</td><td>Pursuing</td><td>CDAC</td><td>2024</td></tr>
+              <tr><td>MBA</td><td>75.75</td><td>SPPU</td><td>2023</td></tr>
+              <tr><td>Bachelor of Engineering</td><td>65.4</td><td>SPPU</td><td>2018</td></tr>
+              <tr><td>Diploma in IT</td><td>70.69</td><td>MSBTE</td><td>2014</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="contact" class="card" style="margin-top:12px">
+          <div class="section-title"><div class="title-dot"></div><h3>Contact / Reliable Form</h3></div>
+          <p class="muted">Use this form to send messages. Replace the <code>FORM_ENDPOINT</code> below with your Formspree endpoint or server API URL.</p>
+
+          <!--
+            IMPORTANT:
+            - By default this demo form performs client-side validation and shows a success message, but it doesn't send data anywhere.
+            - To make it functional, sign up at Formspree (https://formspree.io) or Netlify Forms and replace the `FORM_ENDPOINT` variable in the script below with your endpoint URL.
+            - Alternatively, point `fetch()` to your own API that persists contact messages.
+          -->
+
+          <form id="contactForm" class="contact" onsubmit="return handleSubmit(event)">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="Short subject" />
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or question"></textarea>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn btn-primary" type="submit">Send message</button>
+              <div id="formStatus" class="small muted"></div>
+            </div>
+          </form>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Crafted with care • © <span id="year"></span> Amar Badade — Hosted on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Replace with your real endpoint (Formspree, Netlify, or your API)
+    const FORM_ENDPOINT = '';
+
+    async function handleSubmit(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending...';
+
+      const data = {
+        name: e.target.name.value.trim(),
+        email: e.target.email.value.trim(),
+        subject: e.target.subject.value.trim(),
+        message: e.target.message.value.trim()
+      };
+
+      // Basic client-side validation
+      if(!data.name || !data.email || !data.message){
+        status.textContent = 'Please fill required fields.';
+        return false;
+      }
+
+      try{
+        if(!FORM_ENDPOINT){
+          // Demo mode: just show a success message. Replace FORM_ENDPOINT to enable sending.
+          status.textContent = 'Message ready to send (demo mode). Replace FORM_ENDPOINT in the HTML to enable delivering messages.';
+          e.target.reset();
+          return false;
+        }
+
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify(data)
+        });
+
+        if(res.ok){
+          status.textContent = 'Message sent — thank you!';
+          e.target.reset();
+        } else {
+          const text = await res.text();
+          status.textContent = 'Failed to send message: ' + (text || res.status);
+        }
+      }catch(err){
+        status.textContent = 'Error sending message: ' + err.message;
+      }
+      return false;
+    }
+  </script>
 </body>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                  
-            </section>
-
-            <section class="section--page">
-                <h2>Projects & Accomplishments</h2>
-
-                <div class="card--project">
-                    <a href="project1.html"><span>🏆 </span>Online voting System with python Computer Based application.</a>
-                </div>
-
-                <div class="card--project">
-                    <a href="project1.html" ><span>🏆 </span>Load Balancing in public cloud using google spreadsheet as db.</a>
-                </div>
-
-              
-
-             
-
-            </section>
-
-       
-        </div>
-        <div id="theme-switcher">
-            <div class="theme" id="theme-light" data-theme="light"></div>
-            <div class="theme" id="theme-dark" data-theme="dark"></div>
-        </div>
-    </body>
-    <script src="js/theme-switcher.js"></script>
 </html>
-
-
